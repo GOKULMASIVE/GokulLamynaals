@@ -1,0 +1,27 @@
+#error , #success {
+    border-radius: 2px !important;
+    // height:50px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 2px !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    border: 1px solid white !important;
+    
+    button{
+        color: white !important;
+        opacity: 1 !important;
+    }
+}
+
+#error{
+    background-color: red !important;
+
+
+}
+#success{
+    background-color: rgb(36, 226, 36) !important;
+}

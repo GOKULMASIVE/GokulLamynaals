@@ -1,0 +1,21 @@
+.ImageContainer {
+    height: 100vh !important;
+    width: 100% !important;
+    text-align: center;
+
+    .DownloadButton {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        background-color: green !important;
+        margin: 10px !important;
+
+    }
+
+    img {
+        width: auto !important;
+        padding: 50px 0 10px 0 !important;
+        height: 100% !important;
+    }
+}
+

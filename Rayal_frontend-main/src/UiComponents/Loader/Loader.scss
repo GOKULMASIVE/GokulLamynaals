@@ -1,0 +1,26 @@
+.loader {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    // background: rgba(173, 205, 207, 0.781);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-text {
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.spinner-grow {
+    width: 0.6rem !important;
+    height: 0.6rem !important;
+    margin: 6px 0 0 4px;
+}
+.spinner-box{
+    display: flex;
+    gap: 6px;
+}

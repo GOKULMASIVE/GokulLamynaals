@@ -1,0 +1,53 @@
+.Vehicle-Box {
+    background-color: #E2E7EC;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding-left:4% !important;
+    gap: 10px !important;
+
+    img {
+        height: 50% !important;
+        width: fit-content !important;
+        transition: all 0.3s ease;
+        padding: 10px !important;
+        &:hover{
+            transform: scale(1.1) !important;
+        } 
+    }
+    .Vehicle-title{
+        font-size: 14px !important;
+        font-family: "Poppins", sans-serif !important;
+        font-weight: 500 !important;
+        color: #495057 !important;
+        padding-left: 12px !important;
+    }
+}
+.SelectedBox{
+    background-color: #b0c6f8 !important;
+}
+
+.Calculations_Box{
+    background-color: #F3F3F3;
+    display: flex;
+    justify-content: space-between;
+
+    .Box_Label{
+        color: #2B2D42 !important;
+        font-family: Inter, sans-serif !important;
+        width: 50% !important;
+        font-size: 14px !important;
+    }
+    .Box_Value{
+        width: 25% !important;
+        font-family: Inter, sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        text-align: end !important;
+    }
+}

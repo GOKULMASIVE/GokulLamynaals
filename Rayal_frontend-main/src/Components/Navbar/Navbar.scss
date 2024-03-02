@@ -1,0 +1,175 @@
+@import '../../UiComponents/Scss/variables';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.MainPage {
+    height: 100vh;
+    width: 100%;
+}
+
+.MainAppBar {
+    background-color: $Nav-Color !important;
+    height: 110px !important;
+    display: flex !important;
+    justify-content: center !important;
+    box-shadow: none !important;
+}
+
+.Top_Navbar_First,
+.Top_Navbar_Second {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: white;
+    border: none !important;
+}
+
+.Top_Navbar_First {
+    padding: 40px 34px 20px 34px !important;
+}
+
+.Top_Navbar_Second {
+    box-shadow:  0 10px 10px -10px rgba(0, 0, 0, 0.15);
+    height: 400px !important;
+    padding: 0px 30px 0px 28px !important;
+
+}
+
+
+.renderingContainer {
+    padding: 148px 26px 40px 22px !important;
+    height: 100vh !important;
+    background-color: #F5F7FB !important;
+}
+
+.NavbarDropDown {
+    background-color: $Nav-Color !important;
+    min-width: 140px !important;
+    width: 180px !important;
+    text-align: start !important;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15) !important;
+
+
+    h1 {
+        font-size: 14px !important;
+        color: white !important;
+        padding: 14px 0 14px 10px !important;
+        margin: 0 !important;
+        font-weight: 600 !important;
+    }
+
+    h1:hover {
+        color: white !important;
+        background-color: #6d93ed !important;
+    }
+}
+
+
+
+.NavHeading {
+    font-size: 16px;
+    border: none;
+    font-weight: 500 !important;
+    background-color: $Nav-Color;
+    color: $Nav-Text-color;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 12px 4px 12px 4px !important;
+    border-bottom: 4px solid $Nav-Color !important ;
+}
+
+.NavHeading:hover {
+    border-bottom: 4px solid #0142DA !important ;
+    color: #0142DA !important;
+
+}
+
+.Active {
+    background-color: $Hover-Color;
+}
+
+.NavEndingOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.NavDatePicker {
+    width: 30px;
+
+    .ant-picker {
+        cursor: pointer;
+        color: red !important;
+    }
+}
+
+
+.MobileResponsiveBox {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100%;
+}
+
+.ant-drawer-content-wrapper {
+    height: 100% !important;
+
+}
+
+.ThirdHeaderMenu {
+    position: relative !important;
+    // background-color: red !important;
+
+    h1 {
+        display: flex !important;
+        width: 100% !important;
+        justify-content: space-between !important;
+        color: $Nav-Text-color !important;
+    }
+}
+
+.ThirdHeaderSubMenu {
+    position: absolute !important;
+    top: 0 !important;
+    right: -160px !important;
+    background-color: $Nav-Color !important;
+    width: 160px !important;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15) !important;
+
+}
+
+.Inspect_Box {
+    background-color: white !important;
+    border-radius: 8px !important;
+    box-shadow: rgba(13, 13, 13, 0.1) 0px 0.25rem 0.375rem 0px !important;
+    border: 0.1px solid gray;
+    font-size: 14px !important;
+    padding-top: 10px !important;
+
+    ul {
+        padding-inline-start: 0px !important;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 2px !important;
+
+        li {
+            padding: 5px 20px 5px 25px !important;
+            cursor: pointer !important;
+        }
+
+        li:hover {
+            background-color: gainsboro;
+
+        }
+
+    }
+
+}

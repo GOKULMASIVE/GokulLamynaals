@@ -1,0 +1,52 @@
+//***------HERE IS THE DESIGN OF ALL BUTTONS IN ALL AREAS------***//
+
+
+//---DIALOG BOX'S BUTTON DESIGN---//
+
+$Button-Color : white;
+
+.Dialog_Footer {
+    width: 100%;
+    border-top: 1px solid rgb(192, 190, 190);
+    display: flex !important;
+    justify-content: end;
+    gap: 10px;
+    padding: 10px 14px 10px 0px !important;
+
+    .Dialog_Cancel {
+        color: #FF4757;
+        border: 1px solid #FF4757 !important;
+        text-transform: capitalize;
+        height: 32px !important;
+        padding: 0 20px 0 20px !important;
+        &:hover{
+            background-color: #FF4757;
+            color: white;
+        }
+    }
+
+    .Dialog_Save_Exit {
+        background-color: #0142DA !important;
+        color: $Button-Color;
+        text-transform: capitalize;
+        height: 32px !important;
+        border: 1px solid #0142DA !important;
+        padding: 0 20px 0 20px !important;
+        &:hover{
+            background-color: white !important;
+            color: #0142DA !important;
+        }
+    }
+
+    .Dialog_Save {
+        color: #0142DA;
+        border: 1px solid #0142DA !important;
+        text-transform: capitalize;
+        height: 32px !important;
+        padding: 0 20px 0 20px !important;
+        &:hover{
+            background-color: #0142DA !important;
+            color: white !important;
+        }
+    }
+}

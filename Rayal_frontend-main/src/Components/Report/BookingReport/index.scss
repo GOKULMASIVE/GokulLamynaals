@@ -1,0 +1,73 @@
+.Super_Container {
+
+    .Super_Paper {
+        width: 90% !important;
+        transition: transform .1s;
+        border: 1px solid rgb(224, 223, 223);
+        height: 380px !important;
+
+        .Header_Heading {
+            font-size: 20px;
+            background-color: #EEEEEE;
+            color: #00AA74;
+            padding: 10px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .Header_Count {
+            padding: 10px;
+        }
+
+        .Box_Net,
+        .Box_Od {
+            padding: 10px;
+            background-color: #A1A2FF;
+        }
+
+        .Box_Total,
+        .Box_Tp {
+            padding: 10px;
+            background-color: #A7CBD9;
+        }
+
+        .Box_Button {
+            padding: 10px;
+            background-color: #00AA74;
+            margin: 20px;
+            color: white;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            border: 2px solid #00AA74;
+        }
+    }
+
+    .Paper_1 {
+        animation: Openslide .5s !important;
+    }
+
+    .Paper_2 {
+        animation: Openslide .8s !important;
+    }
+
+    .Paper_3 {
+        animation: Openslide 1s !important;
+    }
+
+    .Paper_4 {
+        animation: Openslide 1.3s !important;
+    }
+
+}
+
+@keyframes Openslide {
+    0% {
+        transform: translateX(-180px) rotate(0deg);
+    }
+
+    100% {
+        transform: skew(0deg) rotate(40deg);
+    }
+}
