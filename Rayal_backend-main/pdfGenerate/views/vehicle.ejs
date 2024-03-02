@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>A simple, clean, and responsive HTML invoice template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
+
+    <!-- Invoice styling -->
+    <style>
+        body {
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #777;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            color: #000;
+        }
+
+        body h1 {
+            font-weight: 800;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+            color: #000;
+            font-size: 20px;
+        }
+
+        table {
+            margin-top: 8px;
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            text-align: center;
+            padding: 4px;
+        }
+
+        td {
+            font-size: 12px;
+            color: black;
+            font-weight: 400;
+
+        }
+
+        th {
+            font-size: 14px;
+            color: #000;
+
+        }
+
+        body a {
+            color: #06f;
+        }
+
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            font-size: 16px;
+            line-height: 20px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
+        }
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left;
+            border-collapse: collapse;
+        }
+
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        #total {
+            font-size: 18px;
+            align-items: center !important;
+        }
+
+        #total-total {
+            padding-top: 16px !important;
+            font-size: 18px;
+        }
+
+        .final_premium {
+            font-size: 16px !important;
+            font-weight: 600 !important;
+        }
+
+        .output {
+            color: black;
+            font-weight: bold !important;
+        }
+
+        .top_content {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .heading {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .image,
+        .details_left,
+        .details_right {
+            width: 33.33%;
+        }
+
+        .details_right {
+            text-align: end;
+        }
+
+        .span_title {
+            font-size: 12px;
+        }
+
+        .span_output {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .powered_by {
+            position: relative;
+            bottom: -10px;
+            left: 45%;
+            background-color: white;
+            font-weight: 600;
+        }
+
+        .address_ul {
+            text-align: center;
+        }
+
+        .address ul li:nth-child(1) {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .footer ul li:nth-child(1) {
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .footer ul li:nth-child(3) {
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .footer ul li:nth-child(2) {
+           margin-left: 20px;
+           margin-bottom: 10px;
+
+        }
+        .footer ul li:nth-child(4) {
+            margin-left: 20px;
+         
+        }
+        .footer ul li:nth-child(5) {
+            margin-left: 20px;
+           
+        }
+
+        .footer {
+            margin-bottom: 80px;
+        }
+        .invoice-box table tr.top table td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.top table td.title {
+            font-size: 45px;
+            line-height: 45px;
+            color: #333;
+        }
+
+        .invoice-box table tr.information table td {
+            padding-bottom: 40px;
+        }
+
+        .invoice-box table tr.heading td {
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .invoice-box table tr.details td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.item td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .invoice-box table tr.item.last td {
+            border-bottom: none;
+        }
+
+        .invoice-box table tr.total td:nth-child(2) {
+            border-top: 2px solid #eee;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .invoice-box table tr.information table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+        <div class="top_content">
+            <div class="details_left">
+                <ul>
+                    <li><span class="span_title">Company:</span><span class="span_output"><%= dynamicData?.company %></span></li>
+                    <li><span class="span_title">Customer:</span></span><span class="span_output"><%= dynamicData?.customerName %></span></li>
+                    <li><span class="span_title">Vehicle Number:</span></span><span class="span_output"><%= dynamicData?.vehicleNumber %></span>
+                    </li>
+                    <li><span class="span_title">Make Model:</span></span><span class="span_output"><%= dynamicData?.makeModel %></span></li>
+                </ul>
+            </div>
+            <!-- <div class="image">
+                <img src="<%= SERVER_URL %>/images/rayal.png" width="250" height="100" alt="logo" />
+            </div>
+            <div class="details_right">
+                <ul>
+                    <li><span class="span_title">Agent:</span><span class="span_output">T.Nagar Office</span></li>
+                    <li><span class="span_title">Mobile Number:</span></span><span class="span_output">9344262789</span>
+                    </li>
+                    <li><span class="span_title">E.mail:</span></span><span
+                            class="span_output">ragavkarthik@gmail.com</span></li>
+                </ul>
+            </div> -->
+        </div>
+        <hr>
+        <div class="header">
+            <h1 class="heading"><%= dynamicData?.premiumName %></h1>
+        </div>
+        <table>
+            <tr>
+                <th colspan="3">IDV</th>
+                <th colspan="3" class="output"><%= dynamicData?.iDV %></th>
+            </tr>
+            <tr>
+                <td>Year of Manufacture</td>
+                <td class="output"><%= dynamicData?.yearOfManufacture %></td>
+                <td></td>
+                <td>Zone</td>
+                <td colspan="2"  class="output"><%= dynamicData?.zone %></td>
+            </tr>
+            <tr>
+                <td>Vehicle Basic Rate</td>
+                <td class="output"><%= dynamicData?.vehiclebaseRate %></td>
+                <td class="output"><%= dynamicData?.vehiclebaseRateValue %></td>
+                <td>Liapility Premium(TP)</td>
+                <td colspan="2" class="output"><%= dynamicData?.LP %></td>
+            </tr>
+            <% if(dynamicData?.lPGKit_A!=0 || dynamicData?.lPGKit_B!=0){ %>
+                <td>LPG KIT</td>
+                <td></td>
+                <td class="output"><%= dynamicData?.lPGKit_A %></td>
+                <td>LPG KIT</td>
+                <td colspan="2" class="output"><%= dynamicData?.lPGKit_B %></td>
+            <% } %>
+            <tr>
+                <% if(dynamicData?.additionalGVW){ %>
+                    <td>Additional GVW	</td>
+                    <td  class="output"><%= dynamicData?.gVW %></td>
+                    <td  class="output"><%= dynamicData?.additionalGVW %></td>
+                <% } %>
+                <% if(!dynamicData?.additionalGVW){ %>
+                    <td>Seating Capacity</td>
+                    <td  class="output"><%= dynamicData?.seatingCapacityAmount %></td>
+                    <td  class="output"><%= dynamicData?.seatingCapacityvalue %></td>
+                <% } %>
+                
+                <td>LL to Passengers</td>
+                <td colspan="2" class="output"><%= dynamicData?.llToPassengers %></td>
+            </tr>
+            <tr>
+                <td colspan="1">IMT 23</td>
+                <td class="output" ><%= dynamicData?.imt23 %></td>
+                <td class="output" ><%= dynamicData?.imt23Value %></td>
+                <td>PA To Owner Driver</td>
+                <td colspan="2" class="output"><%= dynamicData?.pAOwnerDriver %></td>
+            </tr>
+            <tr>
+                <td colspan="1">OD Premium</td>
+                <td colspan="2"><%= dynamicData?.OdPremium %></td>
+                <td colspan="1" class="output">LL to Paid Driver</td>
+                <td colspan="2" class="output"><%= dynamicData?.lLtoPaidDriver %></td>
+            </tr>
+            <tr>
+                <td>Discount on OD Premium</td>
+                <td><%= dynamicData?.discountonODPremium %></td>
+                <td><%= dynamicData?.discountonODPremiumValue %></td>
+                <td colspan="1">Coolies/Cleaner</td>
+                <td colspan="2"><%= dynamicData?.CooliesAndCleaner %></td>
+            </tr>
+            <tr>
+                <td>Basic OD Premium After Discount</td>
+                <td colspan="2"><%= dynamicData?.basicODPremiumAfterDiscount %></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td>Accessories Value</td>
+                <td class="output"><%= dynamicData?.accessories %></td>
+                <td class="output"><%= dynamicData?.accessoriesValue %></td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td>Total basic Premium</td>
+                <td colspan="2" class="output"><%= dynamicData?.totalBasicPremium %></td>
+                <td colspan="3"></td>
+
+            </tr>
+            <tr>
+                <td>No Claim bonus</td>
+                <td class="output"><%= dynamicData?.noClaimBonus %></td>
+                <td class="output"><%= dynamicData?.noClaimBonusValue %></td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td>Net Own Damage Premium</td>
+                <td colspan="2" class="output"><%= dynamicData?.netOwnDamage %></td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td>Zero Dep Premium</td>
+                <td class="output"><%= dynamicData?.zeroDepPremium %></td>
+                <td class="output"><%= dynamicData?.zeroDepPremiumValue %></td>
+                <td colspan="3"></td>
+
+            </tr>
+            <tr>
+                <td>Total A [Od Premium]</td>
+                <td colspan="2" class="output"><%= dynamicData?.totalAodPremium %></td>
+                <td>Total B [Od Premium]</td>
+                <td colspan="2" class="output"><%= dynamicData?.totalBodPremium %></td>
+
+            </tr>
+            <tr>
+                <td colspan="3" class="final_premium">Net Premium<br>[A+B]</td>
+                <td colspan="3" class="output" id="total-total"><%= dynamicData?.netPremiumAB %></td>
+
+            </tr>
+            <% if(dynamicData?.formId!=10){ %>
+                <tr>
+                    <td colspan="3" class="final_premium">GST@18%</td>
+                    <td colspan="3" class="output" id="total"><%= dynamicData?.tax %></td>
+    
+                </tr>
+            <% } %>
+            <% if(dynamicData?.formId==10){ %>
+                <tr>
+                    <td colspan="3" class="final_premium">GST@18%</td>
+                    <td colspan="3" class="output" id="total"><%= dynamicData?.tax18 %></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="final_premium">GST on TP 12%</td>
+                    <td colspan="3" class="output" id="total"><%= dynamicData?.tax12 %></td>
+                </tr>
+            <% } %>
+            <tr>
+                <td colspan="3" class="final_premium">Final <br>Premium</td>
+                <td colspan="3" class="output" id="total-total"><%= dynamicData?.finalPremium %></td>
+            </tr>
+            
+        </table>
+       <br>
+        <div class="footer">
+            <ul>
+                <li>NOTES : </li>
+                <li>⚫ In Case of Any Claim, NCB will be Revised and Hence Question is Subject to Change.</li>
+                <li>Documents Required</li>
+                <li>⚫ Previous Policy Copy</li>
+                <li>⚫ RC Copy</li>
+                
+            </ul>
+        </div>
+        <span class="powered_by">End Of Statement</span>
+        <hr><br>
+        <!-- <div class="address">
+            <ul class="address_ul">
+                <li>Rayal Brokers India Private Limited</li>
+            </ul>
+        </div> -->
+    </div>
+</body>
+
+</html>

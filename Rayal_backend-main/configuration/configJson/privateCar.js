@@ -1,0 +1,123 @@
+const car = {
+    lessThenFiveYears:{
+        A:{
+            "cc=1000":{
+                value:3.127,
+                oneYearTp:2094,
+                threeYearTp:6521
+            },
+            "cc<1500":{
+                value:3.283,
+                oneYearTp:3416,
+                threeYearTp:10640
+            },
+            "cc>1500":{
+                value:3.440,
+                oneYearTp:7897,
+                threeYearTp:24596
+            }
+        },
+        B:{
+            "cc=1000":{
+                value:3.039,
+                oneYearTp:2094,
+                threeYearTp:6521
+            },
+            "cc<1500":{
+                value:3.191,
+                oneYearTp:3416,
+                threeYearTp:10640
+            },
+            "cc>1500":{
+                value:3.343,
+                oneYearTp:7897,
+                threeYearTp:24596
+            }
+        },
+    
+    },
+    lessThenTenYears:{
+
+        A:{
+            "cc=1000":{
+                value:3.283,
+                oneYearTp:2094,
+                threeYearTp:6521
+            },
+            "cc<1500":{
+                value:3.447,
+                oneYearTp:3416,
+                threeYearTp:10640
+            },
+            "cc>1500":{
+                value:3.612,
+                oneYearTp:7897,
+                threeYearTp:24596
+            }
+        },
+        B:{
+            "cc=1000":{
+                value:3.191,
+                oneYearTp:2094,
+                threeYearTp:6521
+            },
+            "cc<1500":{
+                value:3.351,
+                oneYearTp:3416,
+                threeYearTp:10640
+            },
+            "cc>1500":{
+                value:3.510,
+                oneYearTp:7897,
+                threeYearTp:24596
+            }
+        },
+  
+    },
+    greaterThenTenYears:{
+
+        A:{
+            "cc=1000":{
+                value:3.362,
+                oneYearTp:2094,
+                threeYearTp:6521
+            },
+            "cc<1500":{
+                value:3.529,
+                oneYearTp:3416,
+                threeYearTp:10640
+            },
+            "cc>1500":{
+                value:3.698,
+                oneYearTp:7897,
+                threeYearTp:24596
+            }
+        },
+        B:{
+            "cc=1000":{
+                value:3.267,
+                oneYearTp:2094,
+                threeYearTp:6521
+            },
+            "cc<1500":{
+                value:3.430,
+                oneYearTp:3416,
+                threeYearTp:10640
+            },
+            "cc>1500":{
+                value:3.596,
+                oneYearTp:7897,
+                threeYearTp:24596
+            }
+        },
+
+    },
+    accessoriespercent:4,
+    noClaimBonus:4,
+    PAunnamedPercent:0.05,
+    premiumName:"Private Car premium"
+}
+
+module.exports={
+    data:car
+}

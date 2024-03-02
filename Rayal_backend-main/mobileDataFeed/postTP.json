@@ -1,0 +1,69 @@
+{
+    "twoWheeler": {
+        "oneYearTp": {
+            "lessthan75":538,
+            "lessthan150":714,
+            "lessthan350":1366,
+            "greaterthan350":2804
+        },
+        "fiveYearTp": {
+            "lessthan75":2904,
+            "lessthan150":3851,
+            "lessthan350":7356,
+            "greaterthan350":15117
+        }
+    },
+    "threeWheelerGCV": {
+        "TP":4492
+    },
+    "threeWheelerPCV": {
+        "TP":2539,
+        "perPassenger":1214
+    },
+    "privateCar": {
+        "oneYearTp": {
+            "lessthan1000":2094,
+            "lessthan1500":3416,
+            "greaterthan1500":7897
+        },
+        "threeYearTp": {
+            "lessthan1000":6521,
+            "lessthan1500":10640,
+            "greaterthan1500":24596
+        }
+    },
+    "taxi": {
+        "lessthan1000": {
+            "TP":6040,
+            "perPassenger":1162
+        },
+        "lessthan1500": {
+            "TP":7940,
+            "perPassenger":978
+        },
+        "greaterthan1500": {
+            "TP":10523,
+            "perPassenger":1117
+        }
+    },
+    "bus": {
+        "TP":14343,
+        "perPassenger":877
+    },
+    "schoolBus": {
+        "TP":12192,
+        "perPassenger":745
+    },
+    "morethanThreeWheelGCV": {
+        "upto7500":16049,
+        "upto12000":27186,
+        "upto20000":35153,
+        "upto40000":43950,
+        "above40000":44242
+    },
+    "miscellaneous": {
+        "agritracterAndOther": {
+            "TP":7267
+        }
+    }
+}

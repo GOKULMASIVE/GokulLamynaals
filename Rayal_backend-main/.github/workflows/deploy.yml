@@ -1,0 +1,27 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main  # Adjust branch name as needed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          npm i
+      - name: Create SSH directory
+        run: mkdir -p ~/.ssh
+
+      - name: Copy SSH key
+        run: echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+
+      - name: Deploy to EC2
+        run: |
+          ssh -i ~/.ssh/id_rsa 8080 ubuntu@13.235.130.207 'cd /Rayal_Backend && git pull && npm install && pm2 start 0'
